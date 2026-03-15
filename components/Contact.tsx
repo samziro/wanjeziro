@@ -5,7 +5,7 @@ import { useReveal } from '@/hooks/useReveal'
 import Image from 'next/image'
 
 // Replace with your Web3Forms access key from https://web3forms.com
-const WEB3FORMS_KEY = process.env.WEB3FORMS_ACCESS_KEY
+const WEB3FORMS_KEY =process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY
 
 export default function Contact() {
   const { ref, visible } = useReveal()
