@@ -1,7 +1,8 @@
 import type { Metadata } from 'next'
 import './globals.css'
+import Script from 'next/script'
 
-const BASE_URL = 'https://wanjeziro.com'
+const BASE_URL = 'https://wanjeziro.vercel.app'
 
 export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),
@@ -158,9 +159,28 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        {/* Structured Data */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+
+        {/* Google Analytics 4 */}
+        <Script
+          strategy="afterInteractive"
+          src="https://www.googletagmanager.com/gtag/js?id=G-R8LP3ZTJN4"
+        />
+        <Script
+          id="gtag-init"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-R8LP3ZTJN4');
+            `,
+          }}
         />
       </head>
       <body className="grain">{children}</body>
