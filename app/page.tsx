@@ -8,7 +8,7 @@ import Insights from '@/components/Insights'
 import Contact from '@/components/Contact'
 import Footer from '@/components/Footer'
 import Chatbot from '@/components/Chatbot'
-import WhatsAppButton from '@/components/WhatsAppButton'
+import WhatsAppButton from '@/components/WhatsappButton'
 
 export default function Home() {
   return (
