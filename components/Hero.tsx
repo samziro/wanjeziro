@@ -99,7 +99,7 @@ export default function Hero() {
 
           <div className="flex flex-col sm:flex-row gap-4">
             <a
-               href="https://calendly.com/wanjeziro-digitalgrowth-strategitst/30min" target="_blank" rel="noopener noreferrer"
+               href="#contact"
               className="group flex items-center gap-2 px-7 py-4 bg-[var(--navy-900)] text-[var(--cream)] text-sm font-medium hover:bg-[var(--navy-700)] transition-colors duration-300"
             >
               Book a strategy call

@@ -111,7 +111,7 @@ const jsonLd = {
       sameAs: [
         'https://linkedin.com/in/wanjeziro',
         'https://twitter.com/wanjeziro',
-        'https://facebook.com/wanjeziro',
+        'https://facebook.com/wanjezir0',
       ],
       address: {
         '@type': 'PostalAddress',

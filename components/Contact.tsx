@@ -1,51 +1,29 @@
 'use client'
-import { useState } from 'react'
-import { ArrowRight, CheckCircle, Mail, Phone, MapPin, Loader2 } from 'lucide-react'
+import { useState, useEffect } from 'react'
+import { Mail, Phone, MapPin, Calendar } from 'lucide-react'
 import { useReveal } from '@/hooks/useReveal'
 import Image from 'next/image'
 
-
-const WEB3FORMS_KEY=process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY
+// Replace with your real Calendly link
+const CALENDLY_URL = 'https://calendly.com/wanjeziro-digitalgrowth-strategitst/30min'
 
 export default function Contact() {
   const { ref, visible } = useReveal()
-  const [submitted, setSubmitted] = useState(false)
-  const [loading, setLoading] = useState(false)
-  const [error, setError] = useState('')
-  const [form, setForm] = useState({ name: '', business: '', email: '', message: '' })
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-    setLoading(true)
-    setError('')
-
-    try {
-      const res = await fetch('https://api.web3forms.com/submit', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          access_key: WEB3FORMS_KEY,
-          subject: `New enquiry from ${form.name} — ${form.business}`,
-          from_name: form.name,
-          ...form,
-        }),
-      })
-      const data = await res.json()
-      if (data.success) {
-        setSubmitted(true)
-      } else {
-        setError('Something went wrong. Please try again or send a WhatsApp message.')
-      }
-    } catch {
-      setError('Network error. Please check your connection and try again.')
-    } finally {
-      setLoading(false)
-    }
-  }
+  // Load Calendly widget script
+  useEffect(() => {
+    const script = document.createElement('script')
+    script.src = 'https://assets.calendly.com/assets/external/widget.js'
+    script.async = true
+    document.head.appendChild(script)
+    return () => { document.head.removeChild(script) }
+  }, [])
 
   return (
     <section id="contact" className="py-28 px-6 bg-[var(--navy-50)]">
       <div className="max-w-6xl mx-auto">
+
+        {/* Section header */}
         <div ref={ref} className="mb-16">
           <div className="flex items-center gap-3 mb-6">
             <span className="w-8 h-px bg-[var(--navy-700)]" />
@@ -55,126 +33,87 @@ export default function Contact() {
             Let's talk about<br /><em>your business</em>
           </h2>
           <p className="mt-4 text-base font-light opacity-60 max-w-lg text-[var(--navy-900)]">
-            If your business is active online but growth feels unpredictable, a few strategic changes could transform your results. Book a consultation and let's explore how your digital presence can work better.
+            If your business is active online but growth feels unpredictable, a few strategic changes could transform your results. Pick a time below and let's explore how your digital presence can work better.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-16">
-          {/* Form */}
+        <div className="grid md:grid-cols-2 gap-16 items-start">
+
+          {/* LEFT: Calendly embed */}
           <div>
-            {submitted ? (
-              <div className="flex flex-col items-start gap-4 py-16">
-                <div className="w-12 h-12 rounded-full bg-[var(--forest-light)] flex items-center justify-center text-[var(--forest)]">
-                  <CheckCircle size={22} />
+            <div
+              className="calendly-inline-widget w-full border border-[var(--sand)] bg-white overflow-hidden"
+              data-url={`${CALENDLY_URL}?hide_event_type_details=1&hide_gdpr_banner=1&primary_color=2E5E99`}
+              style={{ minWidth: '280px', height: '660px' }}
+            />
+
+            {/* Trust signals */}
+            <div className="mt-5 grid grid-cols-3 gap-3 text-center">
+              {[
+                { icon: Calendar, label: 'Free call' },
+                { icon: Mail,     label: '20 minutes' },
+                { icon: Phone,    label: 'No obligation' },
+              ].map(({ icon: Icon, label }) => (
+                <div key={label} className="flex flex-col items-center gap-1.5 py-3 border border-[var(--sand)] bg-white">
+                  <Icon size={14} className="text-[var(--navy-700)]" />
+                  <span className="text-[11px] font-light opacity-60 text-[var(--navy-900)]">{label}</span>
                 </div>
-                <h3 className="font-display text-2xl font-medium">Message received.</h3>
-                <p className="text-sm font-light opacity-60">
-                  I'll review your details and get back to you within 24 hours to
-                  schedule a time that works.
-                </p>
-              </div>
-            ) : (
-              <form onSubmit={handleSubmit} className="space-y-5">
-                {[
-                  { id: 'name', label: 'Your name', type: 'text', placeholder: 'John Mwangi' },
-                  { id: 'email', label: 'Email address', type: 'email', placeholder: 'john@business.co.ke' },
-                ].map((field) => (
-                  <div key={field.id}>
-                    <label className="block text-xs font-medium opacity-50 mb-2 tracking-wide uppercase">
-                      {field.label}
-                    </label>
-                    <input
-                      type={field.type}
-                      placeholder={field.placeholder}
-                      required
-                      value={(form as any)[field.id]}
-                      onChange={(e) => setForm({ ...form, [field.id]: e.target.value })}
-                      className="w-full px-4 py-3.5 border border-[var(--sand)] bg-transparent text-sm font-light focus:outline-none focus:border-[var(--ink)] transition-colors placeholder-opacity-30 placeholder:text-[var(--ink)] placeholder:opacity-30"
-                    />
-                  </div>
-                ))}
+              ))}
+            </div>
 
-                <div>
-                  <label className="block text-xs font-medium opacity-50 mb-2 tracking-wide uppercase">
-                    What are you trying to solve?
-                  </label>
-                  <textarea
-                    rows={4}
-                    placeholder="Briefly describe your biggest digital marketing challenge..."
-                    value={form.message}
-                    onChange={(e) => setForm({ ...form, message: e.target.value })}
-                    className="w-full px-4 py-3.5 border border-[var(--sand)] bg-transparent text-sm font-light focus:outline-none focus:border-[var(--ink)] transition-colors resize-none placeholder:text-[var(--ink)] placeholder:opacity-30"
-                  />
-                </div>
-
-                <button
-                  type="submit"
-                  disabled={loading}
-                  className="group w-full flex items-center justify-center gap-3 py-4 bg-[var(--navy-900)] text-white text-sm font-medium hover:bg-[var(--navy-700)] transition-colors duration-300 disabled:opacity-60 disabled:cursor-not-allowed"
-                >
-                  {loading ? (
-                    <><Loader2 size={15} className="animate-spin" />Sending…</>
-                  ) : (
-                    <>Send message<ArrowRight size={15} className="group-hover:translate-x-1 transition-transform" /></>
-                  )}
-                </button>
-                
-                {error && (
-                  <p className="text-xs text-red-500 text-center font-light">{error}</p>
-                )}
-
-                <p className="text-xs opacity-30 text-left font-light">
-                  I respond to every message within 2 hours business day.
-                </p>
-                <a className="text-xs pt-8 opacity-80 text-center font-semibold" 
-href="https://wa.me/254769751566?text=Hi%20Wanje%2C%20I'd%20like%20to%20discuss%2
-0my%20digital%20growth">Prefer <span className='text-green-400 italic'>WhatsApp?</span> Start a conversation →</a>
-
-              </form>
-              
-            )}
+            {/* WhatsApp fallback */}
+            <div className="mt-5 text-center">
+              <a
+                href="https://wa.me/254769751566?text=Hi%20Wanje%2C%20I'd%20like%20to%20discuss%20my%20digital%20growth"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-xs font-light opacity-70 hover:opacity-100 transition-opacity text-[var(--navy-900)]"
+              >
+                Prefer <span className="text-green-500 font-medium italic">WhatsApp</span>? Start a conversation →
+              </a>
+            </div>
           </div>
 
-          {/* Contact details + positioning */}
+          {/* RIGHT: Photo + contact details */}
           <div className="space-y-10">
 
-            {/* Portrait image */}
+            {/* Portrait */}
             <div className="relative w-full h-64 overflow-hidden">
               <Image
                 src="/wanje_ziro.jpeg"
-                alt="Wanje Ziro Digital Growth strategist watamu kenya"
+                alt="Wanje Ziro Digital Growth Strategist Watamu Kenya"
                 fill
                 className="object-cover object-top"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[var(--cream)]/60 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[var(--navy-50)]/70 to-transparent" />
             </div>
 
-            <div>
-              <p className="text-sm font-light leading-relaxed opacity-70 mb-8 border-l-2 border-[var(--forest)] pl-5">
-                I work with SMEs that want their digital presence to actually generate
-                results — not just look good. If that sounds like you, let's talk.
-              </p>
+            {/* Quote */}
+            <p className="text-sm font-light leading-relaxed opacity-70 border-l-2 border-[var(--navy-700)] pl-5 text-[var(--navy-900)]">
+              I work with SMEs that want their digital presence to actually generate
+              results — not just look good. If that sounds like you, let's talk.
+            </p>
 
-              <div className="space-y-4">
-                {[
-                  { icon: Mail, label: 'samuelziro76@gmail.com' },
-                  { icon: Phone, label: '+254 769 751 566' },
-                  { icon: MapPin, label: 'Watamu, Kilifi County, Kenya' },
-                ].map(({ icon: Icon, label }) => (
-                  <div key={label} className="flex items-center gap-3">
-                    <div className="w-8 h-8 rounded-full bg-[var(--forest-light)] flex items-center justify-center text-[var(--forest)]">
-                      <Icon size={14} />
-                    </div>
-                    <span className="text-sm font-light opacity-70">{label}</span>
+            {/* Contact details */}
+            <div className="space-y-4">
+              {[
+                { icon: Mail,   label: 'samuelziro76@gmail.com' },
+                { icon: Phone,  label: '+254 769 751 566' },
+                { icon: MapPin, label: 'Watamu, Kilifi County, Kenya' },
+              ].map(({ icon: Icon, label }) => (
+                <div key={label} className="flex items-center gap-3">
+                  <div className="w-8 h-8 rounded-full bg-[var(--navy-100)] flex items-center justify-center text-[var(--navy-700)]">
+                    <Icon size={14} />
                   </div>
-                ))}
-              </div>
+                  <span className="text-sm font-light opacity-70 text-[var(--navy-900)]">{label}</span>
+                </div>
+              ))}
             </div>
 
             {/* Who it's for */}
-            <div className="border border-[var(--sand)] p-6">
-              <p className="text-xs font-medium tracking-widest uppercase opacity-40 mb-4">
-                This is for you if...
+            <div className="border border-[var(--sand)] p-6 bg-white">
+              <p className="text-xs font-medium tracking-widest uppercase opacity-40 mb-4 text-[var(--navy-900)]">
+                This is for you if…
               </p>
               <ul className="space-y-3">
                 {[
@@ -182,15 +121,16 @@ href="https://wa.me/254769751566?text=Hi%20Wanje%2C%20I'd%20like%20to%20discuss%
                   'Your website exists but generates no leads',
                   'You want a system, not just another service',
                   'You are building something worth growing',
-                ].map((item) => (
-                  <li key={item} className="flex items-start gap-2.5 text-sm font-light opacity-70">
-                    <span className="w-1.5 h-1.5 rounded-full bg-[var(--forest)] mt-1.5 flex-shrink-0" />
+                ].map(item => (
+                  <li key={item} className="flex items-start gap-2.5 text-sm font-light opacity-70 text-[var(--navy-900)]">
+                    <span className="w-1.5 h-1.5 rounded-full bg-[var(--navy-700)] mt-1.5 flex-shrink-0" />
                     {item}
                   </li>
                 ))}
               </ul>
             </div>
           </div>
+
         </div>
       </div>
     </section>
