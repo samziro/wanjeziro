@@ -4,11 +4,13 @@ import Problem from '@/components/Problem'
 import Framework from '@/components/Framework'
 import Services from '@/components/Services'
 import Work from '@/components/Work'
-import Insights from '@/components/Insights'
+// import Insights from '@/components/Insights'
 import Contact from '@/components/Contact'
 import Footer from '@/components/Footer'
 import Chatbot from '@/components/Chatbot'
 import WhatsAppButton from '@/components/WhatsAppButton'
+import Testimonials from '@/components/Testimonials'
+import FAQs from '@/components/FAQs'
 
 export default function Home() {
   return (
@@ -19,7 +21,9 @@ export default function Home() {
       <Framework />
       <Services />
       <Work />
-      <Insights />
+      <Testimonials/>
+      {/* <Insights /> */}
+      <FAQs />
       <Contact />
       <Footer />
 

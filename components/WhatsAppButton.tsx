@@ -20,7 +20,7 @@ export default function WhatsAppButton() {
           className="flex items-center gap-2 bg-white border border-[var(--sand)] shadow-lg px-4 py-2.5 text-sm font-light text-[var(--ink)] animate-fade-in"
           style={{ borderRadius: '2px' }}
         >
-          <span>Chat on WhatsApp</span>
+          <span>Chat with Wanje on WhatsApp</span>
           <button
             onClick={() => setTooltip(false)}
             className="opacity-40 hover:opacity-80 transition-opacity ml-1"

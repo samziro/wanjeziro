@@ -12,14 +12,14 @@ export default function Problem() {
   const { ref, visible } = useReveal()
 
   return (
-    <section id="about" className="py-28 px-6 bg-[var(--ink)] text-[var(--cream)]">
+    <section id="about" className="py-28 px-6 bg-[var(--navy-900)] text-white">
       <div className="max-w-6xl mx-auto">
         <div className="grid md:grid-cols-2 gap-16 items-start">
           {/* Left column */}
           <div ref={ref}>
             <div className="flex items-center gap-3 mb-8">
-              <span className="w-8 h-px bg-[var(--forest)]" />
-              <span className="text-xs font-medium tracking-widest uppercase text-[var(--forest)]">
+              <span className="w-8 h-px bg-[var(--navy-400)]" />
+              <span className="text-xs font-medium tracking-widest uppercase text-[var(--navy-400)]">
                 The problem
               </span>
             </div>
@@ -29,10 +29,10 @@ export default function Problem() {
                 visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
               }`}
             >
-              Many businesses are{' '}
-              <em>active online.</em>
+              You’re active online{' '}
+              <em  className="text-[var(--navy-400)]">but sales still feel like a gamble.</em>
               <br />
-              But growth feels random.
+              Let’s change that.
             </h2>
 
             <p className="text-base font-light opacity-60 leading-relaxed max-w-md">
@@ -45,24 +45,14 @@ export default function Problem() {
           {/* Right column */}
           <div className="space-y-1 pt-2">
             {problems.map((item, i) => (
-              <div
-                key={item}
-                className={`group flex items-center gap-5 py-5 border-b border-white/10 transition-all duration-700`}
-                style={{ transitionDelay: `${i * 120}ms` }}
-              >
-                <span
-                  className="text-[var(--forest)] font-display text-sm opacity-60"
-                >
-                  {String(i + 1).padStart(2, '0')}
-                </span>
-                <p className="text-lg font-light opacity-70 group-hover:opacity-100 transition-opacity">
-                  {item}
-                </p>
+              <div key={item} className="group flex items-center gap-5 py-5 border-b border-white/10">
+                <span className="text-[var(--navy-400)] font-display text-sm opacity-60">{String(i + 1).padStart(2, '0')}</span>
+                <p className="text-lg font-light opacity-70 group-hover:opacity-100 transition-opacity">{item}</p>
               </div>
             ))}
 
             <div className="pt-8">
-              <p className="font-display text-xl italic opacity-40 border-l-2 border-[var(--forest)] pl-5">
+              <p className="font-display text-xl italic opacity-40 border-l-2 border-[var(--navy-400)] pl-5">
                 "Because activity is not the same as strategy."
               </p>
             </div>

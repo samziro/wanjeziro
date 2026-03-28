@@ -141,10 +141,10 @@ export default function Chatbot() {
         style={{ height: '520px', borderRadius: '2px' }}
       >
         {/* Header */}
-        <div className="flex items-center justify-between px-5 py-4 bg-[var(--ink)] text-[var(--cream)]">
+        <div className="flex items-center justify-between px-5 py-4 bg-[var(--navy-900)] text-[var(--cream)]">
           <div className="flex items-center gap-3">
             <div className="relative w-8 h-8 rounded-full overflow-hidden border border-white/20">
-              <Image src="/wanje.jpg" alt="Wanje" fill className="object-cover object-top" />
+              <Image src="/wanje_ziro.jpeg" alt="Wanje Ziro Digital Growth strategist watamu kenya" fill className="object-cover object-top" />
             </div>
             <div>
               <p className="text-sm font-medium leading-tight">Wanje's Assistant</p>
@@ -210,7 +210,7 @@ export default function Chatbot() {
               <button
                 key={q}
                 onClick={() => sendMessage(q)}
-                className="text-[11px] font-light px-3 py-1.5 border border-[var(--sand)] text-[var(--ink)] hover:border-[var(--ink)] hover:bg-[var(--sand)] transition-colors"
+                className="text-[11px] font-light px-3 py-1.5 border border-[var(--sand)] text-[var(--navy-900)] hover:border-[var(--navy-700)] hover:bg-[var(--sand)] transition-colors"
                 style={{ borderRadius: '2px' }}
               >
                 {q}
@@ -229,13 +229,13 @@ export default function Chatbot() {
               onChange={(e) => setInput(e.target.value)}
               onKeyDown={(e) => e.key === 'Enter' && sendMessage(input)}
               placeholder="Ask anything…"
-              className="flex-1 px-4 py-2.5 border border-[var(--sand)] bg-transparent text-sm font-light focus:outline-none focus:border-[var(--ink)] transition-colors placeholder:text-[var(--ink)] placeholder:opacity-30"
+              className="flex-1 px-4 py-2.5 border border-[var(--sand)] bg-transparent text-sm font-light focus:outline-none focus:border-[var(--navy-700)] transition-colors placeholder:text-[var(--navy-900)] placeholder:opacity-30"
               style={{ borderRadius: '2px' }}
             />
             <button
               onClick={() => sendMessage(input)}
               disabled={!input.trim() || loading}
-              className="w-10 h-10 flex items-center justify-center bg-[var(--ink)] text-[var(--cream)] hover:bg-[var(--forest)] transition-colors disabled:opacity-40 disabled:cursor-not-allowed flex-shrink-0"
+              className="w-10 h-10 flex items-center justify-center bg-[var(--navy-900)] text-[var(--cream)] hover:bg-[var(--navy-700)] transition-colors disabled:opacity-40 disabled:cursor-not-allowed flex-shrink-0"
               style={{ borderRadius: '2px' }}
             >
               {loading ? <Loader2 size={14} className="animate-spin" /> : <Send size={14} />}
@@ -247,7 +247,7 @@ export default function Chatbot() {
       {/* Toggle button */}
       <button
         onClick={() => setOpen(!open)}
-        className="fixed bottom-6 right-6 z-50 w-14 h-14 bg-[var(--ink)] text-[var(--cream)] flex items-center justify-center hover:bg-[var(--forest)] transition-colors duration-300 shadow-xl"
+        className="fixed bottom-6 right-6 z-50 w-14 h-14 bg-[var(--navy-900)] text-white flex items-center justify-center hover:bg-[var(--navy-700)] transition-colors duration-300 shadow-xl"
         style={{ borderRadius: '2px' }}
         aria-label="Open chat"
       >
@@ -255,7 +255,7 @@ export default function Chatbot() {
 
         {/* Pulse ring */}
         {!open && (
-          <span className="absolute w-14 h-14 rounded-sm border border-[var(--ink)] animate-ping opacity-30" />
+          <span className="absolute w-14 h-14 rounded-sm border border-[var(--navy-700)] animate-ping opacity-30" />
         )}
       </button>
     </>

@@ -7,11 +7,17 @@
 :root {
   --font-display: 'Playfair Display', Georgia, serif;
   --font-body: 'DM Sans', sans-serif;
-  --ink: #1a1410;
-  --cream: #fdfaf5;
-  --sand: #e8dfd0;
-  --forest: #2d7d2d;
-  --forest-light: #f0f7f0;
+  /* Brand palette */
+  --navy-900: #0D2440;   /* dominant — dark navy */
+  --navy-700: #2E5E99;   /* mid — rich blue */
+  --navy-400: #7BA4D0;   /* accent — sky blue */
+  --navy-100: #D6E6F5;   /* light tint */
+  --navy-50:  #EEF5FC;   /* background tint */
+
+  /* Neutrals */
+  --ink:   #0D2440;      /* same as navy-900 for text */
+  --cream: #F7FAFD;      /* off-white with blue tint */
+  --sand:  #D6E6F5;  
 }
 
 * {

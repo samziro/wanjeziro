@@ -4,8 +4,8 @@ import { ArrowRight, CheckCircle, Mail, Phone, MapPin, Loader2 } from 'lucide-re
 import { useReveal } from '@/hooks/useReveal'
 import Image from 'next/image'
 
-// Replace with your Web3Forms access key from https://web3forms.com
-const WEB3FORMS_KEY =process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY
+
+const WEB3FORMS_KEY=process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY
 
 export default function Contact() {
   const { ref, visible } = useReveal()
@@ -44,29 +44,18 @@ export default function Contact() {
   }
 
   return (
-    <section id="contact" className="py-28 px-6 bg-[var(--cream)]">
+    <section id="contact" className="py-28 px-6 bg-[var(--navy-50)]">
       <div className="max-w-6xl mx-auto">
         <div ref={ref} className="mb-16">
           <div className="flex items-center gap-3 mb-6">
-            <span className="w-8 h-px bg-[var(--forest)]" />
-            <span className="text-xs font-medium tracking-widest uppercase text-[var(--forest)]">
-              Let's talk
-            </span>
+            <span className="w-8 h-px bg-[var(--navy-700)]" />
+            <span className="text-xs font-medium tracking-widest uppercase text-[var(--navy-700)]">Let's talk</span>
           </div>
-          <h2
-            className={`font-display text-4xl md:text-5xl font-medium leading-tight max-w-xl transition-all duration-700 ${
-              visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
-            }`}
-          >
-            Let's talk about
-            <br />
-            <em>your business</em>
+          <h2 className={`font-display text-4xl md:text-5xl font-medium leading-tight max-w-xl text-[var(--navy-900)] transition-all duration-700 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
+            Let's talk about<br /><em>your business</em>
           </h2>
-          <p className="mt-4 text-base font-light opacity-60 max-w-lg">
-            If your business is active online but growth feels unpredictable, a
-            few strategic changes could transform your results. Book a
-            consultation and let's explore how your digital presence can work
-            better.
+          <p className="mt-4 text-base font-light opacity-60 max-w-lg text-[var(--navy-900)]">
+            If your business is active online but growth feels unpredictable, a few strategic changes could transform your results. Book a consultation and let's explore how your digital presence can work better.
           </p>
         </div>
 
@@ -88,7 +77,6 @@ export default function Contact() {
               <form onSubmit={handleSubmit} className="space-y-5">
                 {[
                   { id: 'name', label: 'Your name', type: 'text', placeholder: 'John Mwangi' },
-                  { id: 'business', label: 'Business name', type: 'text', placeholder: 'Mwangi & Co.' },
                   { id: 'email', label: 'Email address', type: 'email', placeholder: 'john@business.co.ke' },
                 ].map((field) => (
                   <div key={field.id}>
@@ -122,32 +110,28 @@ export default function Contact() {
                 <button
                   type="submit"
                   disabled={loading}
-                  className="group w-full flex items-center justify-center gap-3 py-4 bg-[var(--ink)] text-[var(--cream)] text-sm font-medium hover:bg-[var(--forest)] transition-colors duration-300 disabled:opacity-60 disabled:cursor-not-allowed"
+                  className="group w-full flex items-center justify-center gap-3 py-4 bg-[var(--navy-900)] text-white text-sm font-medium hover:bg-[var(--navy-700)] transition-colors duration-300 disabled:opacity-60 disabled:cursor-not-allowed"
                 >
                   {loading ? (
-                    <>
-                      <Loader2 size={15} className="animate-spin" />
-                      Sending…
-                    </>
+                    <><Loader2 size={15} className="animate-spin" />Sending…</>
                   ) : (
-                    <>
-                      Send message
-                      <ArrowRight
-                        size={15}
-                        className="group-hover:translate-x-1 transition-transform"
-                      />
-                    </>
+                    <>Send message<ArrowRight size={15} className="group-hover:translate-x-1 transition-transform" /></>
                   )}
                 </button>
-
+                
                 {error && (
                   <p className="text-xs text-red-500 text-center font-light">{error}</p>
                 )}
 
-                <p className="text-xs opacity-30 text-center font-light">
-                  I respond to every message within one business day.
+                <p className="text-xs opacity-30 text-left font-light">
+                  I respond to every message within 2 hours business day.
                 </p>
+                <a className="text-xs pt-8 opacity-80 text-center font-semibold" 
+href="https://wa.me/254769751566?text=Hi%20Wanje%2C%20I'd%20like%20to%20discuss%2
+0my%20digital%20growth">Prefer <span className='text-green-400 italic'>WhatsApp?</span> Start a conversation →</a>
+
               </form>
+              
             )}
           </div>
 
@@ -158,7 +142,7 @@ export default function Contact() {
             <div className="relative w-full h-64 overflow-hidden">
               <Image
                 src="/wanje_ziro.jpeg"
-                alt="Wanje Ziro — Digital Growth Strategist"
+                alt="Wanje Ziro Digital Growth strategist watamu kenya"
                 fill
                 className="object-cover object-top"
               />
