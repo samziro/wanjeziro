@@ -120,9 +120,9 @@ export default function Hero() {
         {/* Stats row */}
         <div className="mt-16 pt-10 border-t border-[var(--sand)] grid grid-cols-3 gap-6 animate-fade-up" style={{ animationDelay: '0.7s' }}>
           {[
-            { value: '50+', label: 'Projects delivered' },
-            { value: '3×', label: 'Avg. lead increase' },
-            { value: '5 yrs', label: 'Building digital systems' },
+            { value: '5+', label: 'SMEs served since 2024' },
+            { value: '3×', label: ' avg. leads in 90 days' },
+            { value: '2 yrs', label: 'working with East African SMEs ' },
           ].map(stat => (
             <div key={stat.label}>
               <p className="font-display text-3xl md:text-4xl font-medium text-[var(--navy-700)]">{stat.value}</p>
