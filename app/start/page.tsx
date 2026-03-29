@@ -3,7 +3,7 @@ import { useState } from 'react'
 import Image from 'next/image'
 import { CheckCircle, ArrowDown, Shield, Clock, Phone } from 'lucide-react'
 
-const WHATSAPP_NUMBER  = '254700000000'
+const WHATSAPP_NUMBER  = '254769751566'
 const WHATSAPP_MESSAGE = encodeURIComponent("Hi Wanje! I saw your ad and I'd like to book a free strategy call.")
 const WHATSAPP_URL     = `https://wa.me/${WHATSAPP_NUMBER}?text=${WHATSAPP_MESSAGE}`
 
@@ -108,7 +108,7 @@ export default function LandingPage() {
                 <span className="text-xs font-medium px-3 py-1 bg-[var(--navy-50)] text-[var(--navy-700)]">Case study</span>
                 <span className="text-xs opacity-40">Watamu, Kenya</span>
               </div>
-              <h3 className="font-display text-2xl font-medium text-[var(--navy-900)] mb-2">Watamu Fitness Center</h3>
+              <h3 className="font-display text-2xl font-medium text-[var(--navy-900)] mb-2">Fit Hunter</h3>
               <p className="text-xs opacity-40 text-[var(--navy-900)] mb-8">Website + Digital Growth System</p>
 
               <div className="grid md:grid-cols-3 gap-6 mb-8">
@@ -155,10 +155,10 @@ export default function LandingPage() {
 
               <div className="flex items-center gap-4">
                 <div className="relative w-12 h-12 rounded-full overflow-hidden border-2 border-[var(--navy-400)]">
-                  <Image src="/wanje_ziro.jpeg" alt="Fatuma Rashid" fill className="object-cover object-top" />
+                  <Image src="/fithunter.jpg" alt="Fit Hunter" fill className="object-cover object-top" />
                 </div>
                 <div className="text-left">
-                  <p className="text-sm font-medium text-white">Fatuma Rashid</p>
+                  <p className="text-sm font-medium text-white">Fit Hunter</p>
                   <p className="text-xs font-light opacity-50 text-white">Director, Kilifi Academy</p>
                 </div>
               </div>
@@ -177,7 +177,13 @@ export default function LandingPage() {
                 Pick a time that works for you. 20 minutes. No pitch. Just strategy.
               </p>
             </div>
-
+            {/* ── URGENCY SIGNAL ─────────────────────────────────────── */}
+            <div className="mb-8 flex items-center justify-center gap-3 px-5 py-3.5 border border-[var(--sand)] bg-white">
+              <span className="w-2 h-2 rounded-full bg-green-500 flex-shrink-0 animate-pulse" />
+              <p className="text-xs font-light text-[var(--navy-900)] opacity-70 text-center">
+                I work with <span className="font-medium opacity-100">3–4 new clients per month.</span> A small number of April strategy call slots are still open — book below to secure yours.
+              </p>
+            </div>
             {/* Calendly iframe */}
             <div className="w-full border border-[var(--sand)] overflow-hidden bg-white" style={{ minHeight: '680px' }}>
               <iframe
