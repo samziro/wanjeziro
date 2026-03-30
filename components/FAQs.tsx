@@ -6,7 +6,7 @@ import { useReveal } from '@/hooks/useReveal'
 const faqs = [
   {
     q: 'How much does this cost?',
-    a: 'Engagements start from KES 45,000 for a strategy sprint and scale based on scope. Every project starts with a free call — so you will know exactly what to expect before committing anything.',
+    a: 'Engagements start from KES 15,000 for a strategy sprint and scale based on scope. Every project starts with a free call — so you will know exactly what to expect before committing anything.',
   },
   {
     q: 'How quickly will I see results?',
@@ -73,9 +73,9 @@ export default function FAQs() {
 
         <div className="mt-12 text-center">
           <p className="text-sm font-light opacity-50 text-[var(--navy-900)] mb-4">Still have a question?</p>
-          <a href="#contact"
+          <a href="mailto:hello@wanjeziro.co.ke"
             className="inline-flex items-center gap-2 px-6 py-3 bg-[var(--navy-900)] text-white text-sm font-medium hover:bg-[var(--navy-700)] transition-colors duration-300">
-            Send a message
+            Ask us anything
           </a>
         </div>
       </div>

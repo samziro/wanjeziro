@@ -97,7 +97,7 @@ export default function Contact() {
             {/* Contact details */}
             <div className="space-y-4">
               {[
-                { icon: Mail,   label: 'samuelziro76@gmail.com' },
+                { icon: Mail,   label: 'hello@wanjeziro.co.ke' },
                 { icon: Phone,  label: '+254 769 751 566' },
                 { icon: MapPin, label: 'Watamu, Kilifi County, Kenya' },
               ].map(({ icon: Icon, label }) => (
