@@ -1,8 +1,10 @@
 import type { Metadata } from 'next'
-import './globals.css'
 import Script from 'next/script'
+import './globals.css'
 
 const BASE_URL = 'https://wanjeziro.co.ke'
+const GA4_ID = 'G-R8LP3ZTJN4'
+const CLARITY_ID = 'W2ttveztg2'
 
 export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),
@@ -16,7 +18,7 @@ export const metadata: Metadata = {
     'Wanje Ziro helps SMEs in Kenya turn their online presence into a consistent customer system through high-performance websites, digital marketing strategy, and conversion-focused growth systems.',
 
   // Keywords
-  keywords: [
+ keywords: [
     'digital growth strategist Kenya',
     'SME digital marketing Kenya',
     'website designer Watamu',
@@ -25,7 +27,21 @@ export const metadata: Metadata = {
     'SME website Kenya',
     'lead generation Kenya',
     'online marketing for small businesses Kenya',
+    'digital marketing watamu',
+    'website design watamu kenya',
+    'tourism digital marketing kenya coast',
+    'digital marketing for hotels kenya',
+    'hotel website design watamu',
+    'website design mombasa kenya',
+    'digital marketing for restaurants kenya',
+    'tourism website design watamu',
+    'digital marketing for tour operators kenya',
+    'digital marketing for local businesses kenya',
+    'digital marketing for SMEs kenya',
+    'digital marketing for small businesses kenya',
+    ''
   ],
+
 
   // Authorship
   authors: [{ name: 'Wanje Ziro', url: BASE_URL }],
@@ -37,7 +53,7 @@ export const metadata: Metadata = {
     canonical: '/',
   },
 
-  // Open Graph (Facebook, LinkedIn, WhatsApp previews)
+  // Open Graph
   openGraph: {
     type: 'website',
     url: BASE_URL,
@@ -78,7 +94,7 @@ export const metadata: Metadata = {
     },
   },
 
-  // Verification (add your real codes from Google Search Console / Bing)
+  // Verification
   verification: {
     google: 'YOUR_GOOGLE_VERIFICATION_CODE',
     // bing: 'YOUR_BING_VERIFICATION_CODE',
@@ -96,7 +112,7 @@ export const metadata: Metadata = {
   category: 'Digital Marketing',
 }
 
-// Structured data — JSON-LD (Person + LocalBusiness schema)
+// Structured data — JSON-LD
 const jsonLd = {
   '@context': 'https://schema.org',
   '@graph': [
@@ -168,7 +184,7 @@ export default function RootLayout({
         {/* Google Analytics 4 */}
         <Script
           strategy="afterInteractive"
-          src="https://www.googletagmanager.com/gtag/js?id=G-R8LP3ZTJN4"
+          src={`https://www.googletagmanager.com/gtag/js?id=${GA4_ID}`}
         />
         <Script
           id="gtag-init"
@@ -177,8 +193,28 @@ export default function RootLayout({
             __html: `
               window.dataLayer = window.dataLayer || [];
               function gtag(){dataLayer.push(arguments);}
+              window.gtag = window.gtag || gtag;
               gtag('js', new Date());
-              gtag('config', 'G-R8LP3ZTJN4');
+              gtag('config', '${GA4_ID}', {
+                page_path: window.location.pathname,
+              });
+            `,
+          }}
+        />
+        {/* Contentsquare UXA Hotjar */}
+        <script src="https://t.contentsquare.net/uxa/642ddce8a9301.js"></script>
+
+        {/* Microsoft Clarity */}
+        <Script
+          id="clarity-init"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function(c,l,a,r,i,t,y){
+                c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+                t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+                y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+              })(window, document, "clarity", "script", "${CLARITY_ID}");
             `,
           }}
         />

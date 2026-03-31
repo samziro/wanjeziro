@@ -120,7 +120,7 @@ export default function Hero() {
         {/* Stats row */}
         <div className="mt-16 pt-10 border-t border-[var(--sand)] grid grid-cols-3 gap-6 animate-fade-up" style={{ animationDelay: '0.7s' }}>
           {[
-            { value: '5+', label: 'SMEs served since 2024' },
+            { value: '10+', label: 'SMEs served since 2024' },
             { value: '3×', label: ' avg. leads in 90 days' },
             { value: '2 yrs', label: 'working with East African SMEs ' },
           ].map(stat => (
