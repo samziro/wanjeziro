@@ -103,7 +103,7 @@ export default function Testimonials() {
         {/* Social proof bar */}
         <div className="mt-12 pt-10 border-t border-white/10 grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
           {[
-            { value: '5+', label: 'Projects completed' },
+            { value: '10+', label: 'Projects completed' },
             { value: '98%', label: 'Client satisfaction' },
             { value: '60–90', label: 'Days to first results' },
             { value: '2 yrs', label: 'Industry experience' },

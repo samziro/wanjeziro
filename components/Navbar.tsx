@@ -7,7 +7,7 @@ const navLinks = [
   { label: 'Framework', href: '#framework' },
   { label: 'Services', href: '#services' },
   { label: 'Work', href: '#work' },
-  // { label: 'Insights', href: '#insights' },
+  { label: 'Pricing', href: '/pricing' },
 ]
 
 export default function Navbar() {

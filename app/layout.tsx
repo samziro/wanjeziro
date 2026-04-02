@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Script from 'next/script'
 import './globals.css'
+import { Analytics } from "@vercel/analytics/next"
 
 const BASE_URL = 'https://wanjeziro.co.ke'
 const GA4_ID = 'G-R8LP3ZTJN4'
@@ -220,6 +221,7 @@ export default function RootLayout({
         />
       </head>
       <body className="grain">{children}</body>
+      <Analytics />
     </html>
   )
 }

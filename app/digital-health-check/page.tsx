@@ -169,10 +169,10 @@ const results: Result[] = [
 ];
 
 const categoryIcons: Record<string, string> = {
-  Website: "🌐",
-  SEO: "🔍",
-  "Social Media": "📱",
-  "Marketing Funnel": "🔄",
+  "Website": "ri-global-line",
+  "SEO": "ri-search-line",
+  "Social Media": "ri-smartphone-line",
+  "Marketing Funnel": "ri-arrow-right-up-line",
 };
 
 const urgencyStyles = {
@@ -295,7 +295,7 @@ export default function DigitalHealthCheckPage() {
 
           {/* What you'll learn */}
           <div
-            className="rounded-3xl p-8 sm:p-10 mb-8"
+            className=" p-8 sm:p-10 mb-8"
             style={{
               background: "var(--navy-900)",
             }}
@@ -309,28 +309,28 @@ export default function DigitalHealthCheckPage() {
             <div className="space-y-5">
               {[
                 {
-                  icon: "🌐",
+                  icon: "ri-global-line ",
                   title: "Website Score",
                   body: "Is your website actually converting visitors into clients?",
                 },
                 {
-                  icon: "🔍",
+                  icon: "ri-search-line ",
                   title: "SEO Score",
                   body: "Can the right people find you on Google?",
                 },
                 {
-                  icon: "📱",
+                  icon: "ri-smartphone-line ",
                   title: "Social Media Score",
                   body: "Is your content driving business or just collecting likes?",
                 },
                 {
-                  icon: "🔄",
+                  icon: "ri-arrow-right-up-line",
                   title: "Marketing Funnel Score",
                   body: "Are you capturing and following up on every potential lead?",
                 },
               ].map((item) => (
                 <div key={item.title} className="flex gap-4 items-start">
-                  <span className="text-xl flex-shrink-0 mt-0.5">{item.icon}</span>
+                  <span className="text-xl flex-shrink-0 mt-0.5"><i className={item.icon}></i></span>
                   <div>
                     <p
                       className="text-sm font-semibold mb-1"
@@ -356,7 +356,7 @@ export default function DigitalHealthCheckPage() {
 
           <button
             onClick={() => setStage("quiz")}
-            className="w-full py-5 rounded-full font-semibold text-base tracking-wide transition-all duration-200 hover:scale-[1.01] active:scale-[0.99]"
+            className="w-1/2 mx-auto py-5 font-semibold text-base tracking-wide transition-all duration-200 hover:scale-[1.01] active:scale-[0.99]"
             style={{
               background: "var(--navy-900)",
               color: "var(--cream)",
@@ -478,7 +478,7 @@ export default function DigitalHealthCheckPage() {
       <main className="min-h-screen px-6 py-20" style={{ background: "var(--cream)" }}>
         <div className="max-w-md mx-auto">
           <div className="text-center mb-10">
-            <div className="text-4xl mb-4">✅</div>
+            <div className="text-4xl mb-4"><i className="ri-check-double-fill"></i></div>
             <h2
               className="text-2xl sm:text-3xl font-bold mb-3"
               style={{
