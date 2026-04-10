@@ -4,36 +4,56 @@ import { useReveal } from '@/hooks/useReveal'
 
 const services = [
   {
-    icon: Zap,
-    title: 'Digital Growth Systems',
-    tagline: 'From scattered activity to structured pipeline',
+    icon: Globe,
+    title: 'Professional Websites for Watamu Businesses',
+    tagline: 'From no website to bookings in weeks',
     description:
-      'Build a complete digital marketing system that moves the right people from discovery to paying customer — consistently, not by chance.',
-    deliverables: ['Marketing funnel design', 'Lead capture systems', 'Email automation', 'Conversion tracking'],
+      'Modern, mobile-friendly websites designed specifically for hotels, restaurants, curio shops, guesthouses and tour operators in Watamu & Malindi. Built to look professional and get real customer enquiries.',
+    deliverables: [
+      'Custom design for your business',
+      'Fast loading & mobile friendly',
+      'Google-friendly SEO setup',
+      'Online booking & contact forms',
+    ],
   },
   {
-    icon: Globe,
-    title: 'High-Performance Websites',
-    tagline: 'Built to convert, not just impress',
+    icon: Zap,
+    title: 'Digital Growth Systems',
+    tagline: 'Stop random posting. Start getting consistent customers',
     description:
-      'Conversion-focused websites designed to attract your ideal client, communicate value clearly, and turn visitors into enquiries.',
-    deliverables: ['UX-first design', 'SEO foundation', 'Speed optimisation', 'Mobile-first build'],
+      'I build a simple, easy-to-manage digital system so your business is visible to tourists and locals 24/7 — turning online activity into actual bookings and sales.',
+    deliverables: [
+      'Lead capture & follow-up system',
+      'Simple content calendar',
+      'WhatsApp & email automation',
+      'Monthly performance report',
+    ],
   },
   {
     icon: Megaphone,
-    title: 'Digital Marketing Strategy',
-    tagline: 'Stop guessing. Start marketing intentionally.',
+    title: 'Digital Marketing for Coastal SMEs',
+    tagline: 'Targeted marketing that brings real results',
     description:
-      'A clear, actionable marketing strategy built around your business goals — so every post, ad, and email has a purpose.',
-    deliverables: ['Audience research', 'Channel strategy', 'Content planning', 'KPI framework'],
+      'Practical digital marketing strategies focused on Watamu and Malindi tourists. I help you get found on Google, Instagram and Facebook with posts and ads that actually convert.',
+    deliverables: [
+      'Audience & competitor research',
+      'Instagram & Facebook strategy',
+      'Google Ads & local SEO',
+      'Clear monthly goals & tracking',
+    ],
   },
   {
     icon: Palette,
-    title: 'Brand & Content Development',
-    tagline: 'A presence people remember and trust',
+    title: 'Branding & Content Development',
+    tagline: 'Look professional and stand out to tourists',
     description:
-      'Clear messaging and professional visual identity that ensures your business looks and sounds credible at every touchpoint.',
-    deliverables: ['Brand identity', 'Messaging framework', 'Content templates', 'Visual guidelines'],
+      'Clear branding, professional photos, and simple content that makes your business memorable. Perfect for restaurants, hotels and experiences in Watamu that want to attract more international visitors.',
+    deliverables: [
+      'Brand messaging that sells',
+      'Logo & visual identity refresh',
+      'Photo & video content guidelines',
+      'Ready-to-post templates',
+    ],
   },
 ]
 
@@ -56,13 +76,12 @@ export default function Services() {
                 visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
               }`}
             >
-              How I Help You Build
+              Services That Get
               <br />
-              <em>a Customer Generating Digital Presence</em>
+              <em>Watamu Businesses More Customers Online</em>
             </h2>
             <p className="text-sm font-light opacity-60 max-w-sm text-[var(--navy-900)]">
-              Every engagement is focused on one outcome: turning your digital
-              presence into a reliable source of customers.
+              Every service is designed for small hotels, restaurants, shops and tour operators in Watamu &amp; Malindi who want simple, affordable solutions that deliver real results.
             </p>
           </div>
         </div>
@@ -71,21 +90,38 @@ export default function Services() {
           {services.map((service) => {
             const Icon = service.icon
             return (
-              <div key={service.title} className="group bg-[var(--cream)] p-8 md:p-10 hover:bg-[var(--navy-900)] transition-colors duration-500 cursor-default">
+              <div
+                key={service.title}
+                className="group bg-[var(--cream)] p-8 md:p-10 hover:bg-[var(--navy-900)] transition-colors duration-500 cursor-default"
+              >
                 <div className="flex items-start justify-between mb-6">
                   <div className="w-10 h-10 rounded-full bg-[var(--navy-50)] flex items-center justify-center text-[var(--navy-700)] group-hover:bg-[var(--navy-700)] group-hover:text-white transition-colors duration-500">
                     <Icon size={18} />
                   </div>
-                  <ArrowUpRight size={16} className="opacity-0 group-hover:opacity-40 text-white transition-opacity duration-300" />
+                  <ArrowUpRight
+                    size={16}
+                    className="opacity-0 group-hover:opacity-40 text-white transition-opacity duration-300"
+                  />
                 </div>
-                <p className="text-[10px] font-medium tracking-widest uppercase text-[var(--navy-700)] opacity-70 mb-2">{service.tagline}</p>
-                <h3 className="font-display text-2xl font-medium mb-4 text-[var(--navy-900)] group-hover:text-white transition-colors duration-500">{service.title}</h3>
-                <p className="text-sm font-light leading-relaxed opacity-60 text-[var(--navy-900)] group-hover:text-white mb-6 transition-colors duration-500">{service.description}</p>
-               
+
+                <p className="text-[10px] font-medium tracking-widest uppercase text-[var(--navy-700)] opacity-70 mb-2">
+                  {service.tagline}
+                </p>
+
+                <h3 className="font-display text-2xl font-medium mb-4 text-[var(--navy-900)] group-hover:text-white transition-colors duration-500">
+                  {service.title}
+                </h3>
+
+                <p className="text-sm font-light leading-relaxed opacity-60 text-[var(--navy-900)] group-hover:text-white mb-6 transition-colors duration-500">
+                  {service.description}
+                </p>
 
                 <ul className="space-y-1.5">
-                   {service.deliverables.map(item => (
-                    <li key={item} className="flex items-center gap-2 text-xs font-light opacity-50 text-[var(--navy-900)] group-hover:text-white transition-colors duration-500">
+                  {service.deliverables.map((item) => (
+                    <li
+                      key={item}
+                      className="flex items-center gap-2 text-xs font-light opacity-50 text-[var(--navy-900)] group-hover:text-white transition-colors duration-500"
+                    >
                       <span className="w-1 h-1 rounded-full bg-[var(--navy-400)] flex-shrink-0" />
                       {item}
                     </li>
