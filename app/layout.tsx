@@ -12,41 +12,34 @@ export const metadata: Metadata = {
 
   // Core
   title: {
-    default: 'Wanje Ziro — Digital Growth Strategist for SMEs',
+    default: 'Website Designer Watamu | Digital Marketing for Hotels & SMEs',
     template: '%s | Wanje Ziro',
   },
   description:
-    'Wanje Ziro helps SMEs in Kenya turn their online presence into a consistent customer system through high-performance websites, digital marketing strategy, and conversion-focused growth systems.',
+    'Affordable website designer and digital marketing services in Watamu, Kenya. I help hotels, restaurants, curio shops, guesthouses and tour operators in Watamu, Malindi & Kilifi get a professional website, Google visibility and more customers online.',
 
   // Keywords
  keywords: [
-    'digital growth strategist Kenya',
-    'SME digital marketing Kenya',
     'website designer Watamu',
-    'conversion strategy Kenya',
-    'digital marketing consultant Kilifi',
-    'SME website Kenya',
-    'lead generation Kenya',
-    'online marketing for small businesses Kenya',
-    'digital marketing watamu',
-    'website design watamu kenya',
-    'website design for hotels kenya',
-    'digital marketing for tour operators kenya',
-    'digital marketing for restaurants kenya',
-    'digital marketing for local businesses kenya',
-    'digital marketing for SMEs kenya',
-    'digital marketing for small businesses kenya',
-    'tourism digital marketing kenya coast',
-    'digital marketing for hotels kenya',
-    'hotel website design watamu',
-    'website design mombasa kenya',
-    'digital marketing for restaurants kenya',
-    'tourism website design watamu',
-    'digital marketing for tour operators kenya',
-    'digital marketing for local businesses kenya',
-    'digital marketing for SMEs kenya',
-    'digital marketing for small businesses kenya',
-    ''
+    'web designer Watamu',
+    'affordable website designer Watamu',
+    'digital marketing Watamu',
+    'digital marketing Malindi',
+    'website designer Malindi',
+    'hotel website design Watamu',
+    'restaurant website Watamu',
+    'tourism website design Watamu',
+    'digital marketing for hotels Watamu',
+    'digital marketing for restaurants Watamu',
+    'digital marketing for tour operators Watamu',
+    'cheap website Watamu',
+    'Google Business Profile Watamu',
+    'SME digital marketing Kenya coast',
+    'website design for small businesses Watamu',
+    'social media marketing Watamu',
+    'local SEO Watamu',
+    'digital marketing for SMEs Watamu',
+    'web development Watamu Kenya',
   ],
 
 
@@ -65,16 +58,16 @@ export const metadata: Metadata = {
     type: 'website',
     url: BASE_URL,
     siteName: 'Wanje Ziro',
-    title: 'Wanje Ziro — Digital Growth Strategist for SMEs',
+    title: 'Website Designer Watamu | Digital Marketing for Hotels & SMEs',
     description:
-      'Helping SMEs in Kenya move from random digital activity to structured growth. Websites, marketing systems, and conversion strategy.',
+      'Affordable website designer and digital marketing in Watamu, Kenya. Perfect for hotels, restaurants, curio shops and tour operators who want more customers online.',
     locale: 'en_KE',
     images: [
       {
         url: '/og-image.jpg',
         width: 1200,
         height: 630,
-        alt: 'Wanje Ziro — Digital Growth Strategist for SMEs',
+        alt: 'Wanje Ziro — Website Designer & Digital Marketing Watamu',
       },
     ],
   },
@@ -82,9 +75,9 @@ export const metadata: Metadata = {
   // Twitter / X card
   twitter: {
     card: 'summary_large_image',
-    title: 'Wanje Ziro — Digital Growth Strategist for SMEs',
+    title: 'Website Designer Watamu | Digital Marketing for Hotels & SMEs',
     description:
-      'Helping SMEs in Kenya move from random digital activity to structured growth.',
+      'Affordable website designer and digital marketing in Watamu, Kenya. Helping small businesses get found by tourists and grow online.',
     images: ['/og-image.jpg'],
     creator: '@wanjeziro',
   },
@@ -99,12 +92,6 @@ export const metadata: Metadata = {
       'max-image-preview': 'large',
       'max-snippet': -1,
     },
-  },
-
-  // Verification
-  verification: {
-    google: 'YOUR_GOOGLE_VERIFICATION_CODE',
-    // bing: 'YOUR_BING_VERIFICATION_CODE',
   },
 
   // Icons
@@ -146,9 +133,9 @@ const jsonLd = {
     {
       '@type': 'LocalBusiness',
       '@id': `${BASE_URL}/#business`,
-      name: 'Wanje Ziro — Digital Growth Strategy',
-      description:
-        'Digital growth strategy, high-performance websites, and marketing systems for SMEs in Kenya.',
+      name: 'Website Designer Watamu | Digital Marketing for Hotels & SMEs',
+     description:
+      'Affordable website designer and digital marketing in Watamu, Kenya. Perfect for hotels, restaurants, curio shops and tour operators who want more customers online.',
       url: BASE_URL,
       founder: { '@id': `${BASE_URL}/#person` },
       areaServed: ['Kenya', 'East Africa'],
