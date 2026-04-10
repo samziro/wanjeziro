@@ -1,4 +1,4 @@
-here is the hero.tsx component: 'use client'
+'use client'
 import { useEffect, useRef } from 'react'
 import { ArrowDownRight } from 'lucide-react'
 import Image from 'next/image'
