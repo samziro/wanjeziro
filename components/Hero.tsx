@@ -36,7 +36,6 @@ export default function Hero() {
           )`,
         }}
       />
-
       {/* Accent blob */}
       <div
         className="absolute top-32 right-0 w-96 h-96 rounded-full opacity-20"
@@ -46,11 +45,11 @@ export default function Hero() {
         }}
       />
 
-      {/* Hero headshot — replace /wanje.jpg with your photo */}
+      {/* Hero headshot */}
       <div className="absolute right-0 top-0 h-full w-[48%] hidden lg:block">
         <Image
           src="/wanje_ziro.jpeg"
-          alt="Wanje Ziro Digital Growth strategist watamu kenya"
+          alt="Wanje Ziro - Website Designer Watamu | Digital Marketing for Hotels & SMEs"
           fill
           className="object-cover object-top"
           priority
@@ -62,23 +61,23 @@ export default function Hero() {
       </div>
 
       <div className="max-w-6xl mx-auto w-full relative z-10">
-        {/* Eyebrow */}
+        {/* Eyebrow - now matches what people search for */}
         <div className="flex items-center gap-3 mb-10 animate-fade-in" style={{ animationDelay: '0.1s' }}>
           <span className="w-8 h-px bg-[var(--navy-700)]" />
           <span className="text-xs font-medium tracking-widest uppercase text-[var(--navy-700)]">
-            Digital Growth Strategist · Watamu, Kenya
+            Website Designer &amp; Digital Marketing • Watamu, Kenya
           </span>
         </div>
 
-        {/* Main headline */}
+        {/* Main headline - clear, local, and benefit-focused */}
         <div className="overflow-hidden mb-6">
           <h1 className="font-display text-5xl md:text-7xl lg:text-8xl font-medium leading-[1.05] animate-fade-up text-[var(--navy-900)]"
             style={{ animationDelay: '0.2s' }}>
-            Turning online
+            Website Designer
             <br />
-            <em className="not-italic text-[var(--navy-700)]">presence</em> into
+            <em className="not-italic text-[var(--navy-700)]">Watamu</em>
             <br />
-            customers.
+            that gets you customers.
           </h1>
         </div>
 
@@ -94,15 +93,15 @@ export default function Hero() {
           style={{ animationDelay: '0.5s' }}
         >
           <p className="text-base md:text-lg font-light text-[var(--navy-900)] opacity-70 max-w-md leading-relaxed">
-            I help SMEs replace random posting and ads with a structured digital growth system so you get predictable customers, not just activity.
+            I help hotels, restaurants, curio shops, guesthouses and tour operators in Watamu, Malindi &amp; Kilifi get a professional website, strong Google presence and consistent marketing that actually brings in real customers — not just random posts.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4">
             <a
-               href="#contact"
+              href="#contact"
               className="group flex items-center gap-2 px-7 py-4 bg-[var(--navy-900)] text-[var(--cream)] text-sm font-medium hover:bg-[var(--navy-700)] transition-colors duration-300"
             >
-              Book a strategy call
+              Book a free strategy call
               <ArrowDownRight
                 size={15}
                 className="group-hover:translate-x-1 group-hover:translate-y-1 transition-transform"
@@ -117,12 +116,12 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* Stats row */}
+        {/* Stats row - now more relevant to local SMEs */}
         <div className="mt-16 pt-10 border-t border-[var(--sand)] grid grid-cols-3 gap-6 animate-fade-up" style={{ animationDelay: '0.7s' }}>
           {[
-            { value: '10+', label: 'SMEs served since 2024' },
-            { value: '3×', label: ' avg. leads in 90 days' },
-            { value: '2 yrs', label: 'working with East African SMEs ' },
+            { value: '10+', label: 'Watamu & Malindi businesses served' },
+            { value: '3×', label: 'avg. more customer inquiries' },
+            { value: '2 yrs', label: 'helping coastal SMEs grow online' },
           ].map(stat => (
             <div key={stat.label}>
               <p className="font-display text-3xl md:text-4xl font-medium text-[var(--navy-700)]">{stat.value}</p>
@@ -130,14 +129,7 @@ export default function Hero() {
             </div>
           ))}
         </div>
-
       </div>
-
-      {/* Scroll indicator
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-40">
-        <span className="text-[10px] tracking-widest uppercase">scroll</span>
-        <div className="w-px h-8 bg-[var(--ink)]" style={{ animation: 'pulse 2s infinite' }} />
-      </div> */}
     </section>
   )
 }
